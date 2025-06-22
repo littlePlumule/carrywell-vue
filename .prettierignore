@@ -1,0 +1,17 @@
+// .prettierignore
+# 忽略 node_modules 資料夾
+node_modules/
+
+# 忽略 dist 資料夾
+dist/
+
+# 忽略 public 資料夾
+public/
+
+# 忽略特定的檔案類型，例如編譯過的 JavaScript
+*.min.js
+
+# 忽略某些檔案，如設定檔案
+*.config.js
+
+.vscode*
