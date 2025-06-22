@@ -1,16 +1,27 @@
 import { createWebHistory, createRouter } from 'vue-router'
 import { isValidCategory, findProductById } from '../utils/pathValidator'
 
+import PageHome from '../pages/PageHome.vue'
+import PageProduct from '../pages/PageProduct.vue'
+import PageProductDetail from '../pages/PageProductDetail.vue'
+import PageFavorite from '../pages/PageFavorite.vue'
+import PageCart from '../pages/PageCart.vue'
+import PageLogin from '../pages/PageLogin.vue'
+import PageRegister from '../pages/PageRegister.vue'
+import PageForgetPassword from '../pages/PageForgetPassword.vue'
+import PageAboutUs from '../pages/PageAboutUs.vue'
+import NotFound from '../pages/NotFound.vue'
+
 const routes = [
-  { path: '/', component: () => import('../pages/PageHome.vue') },
+  { path: '/', component: PageHome },
   {
     path: '/product',
-    component: () => import('../pages/PageProduct.vue'),
+    component: PageProduct,
     redirect: '/product/hot',
   },
   {
     path: '/product/:category',
-    component: () => import('../pages/PageProduct.vue'),
+    component: PageProduct,
     beforeEnter: (to, from, next) => {
       if (isValidCategory(to.params.category)) {
         next()
@@ -21,7 +32,7 @@ const routes = [
   },
   {
     path: '/product/:category/:productId',
-    component: () => import('../pages/PageProductDetail.vue'),
+    component: PageProductDetail,
     beforeEnter: (to, from, next) => {
       const category = to.params.category
       const productId = to.params.productId
@@ -38,29 +49,29 @@ const routes = [
   },
   {
     path: '/favorite',
-    component: () => import('../pages/PageFavorite.vue'),
+    component: PageFavorite,
   },
   {
     path: '/cart',
-    component: () => import('../pages/PageCart.vue'),
+    component: PageCart,
   },
   {
     path: '/login',
-    component: () => import('../pages/PageLogin.vue'),
+    component: PageLogin,
   },
   {
     path: '/register',
-    component: () => import('../pages/PageRegister.vue'),
+    component: PageRegister,
   },
   {
     path: '/forget-password',
-    component: () => import('../pages/PageForgetPassword.vue'),
+    component: PageForgetPassword,
   },
-  { path: '/about', component: () => import('../pages/PageAboutUs.vue') },
+  { path: '/about', component: PageAboutUs },
   {
     path: '/:pathMatch(.*)*',
     name: 'NotFound',
-    component: () => import('../pages/NotFound.vue'),
+    component: NotFound,
   },
 ]
 
