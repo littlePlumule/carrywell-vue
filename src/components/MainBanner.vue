@@ -18,6 +18,7 @@
 <style lang="scss" scoped>
 .main-banner {
   height: calc(100vh - 48px - var(--container-large-block) * 2);
+  max-height: 1280px;
   background:
     radial-gradient(ellipse, #d9d9d900, #78787800, #181818),
     url('@/assets/image/main-banner-small.jpg') no-repeat center center / cover;

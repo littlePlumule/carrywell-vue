@@ -88,7 +88,7 @@ const { totalItem } = useCart()
             </span>
             <icon-wrapper
               :icon-name="iconItem.iconName"
-              class="main-header__icon hl5"
+              class="main-header__icon hl4"
             />
           </router-link>
         </li>
