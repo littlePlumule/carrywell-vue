@@ -1,4 +1,5 @@
 <script setup>
+import { ref } from 'vue'
 import IconWrapper from './IconWrapper.vue'
 
 const options = ['最新上架', '價格低到高', '價格高到低']
@@ -11,14 +12,20 @@ defineProps({
 
 const emit = defineEmits(['sort'])
 
+const trigger = ref(false)
+function toggleTrigger() {
+  trigger.value = !trigger.value
+}
+
 function handleSelect(option) {
   emit('sort', option)
+  trigger.value = false
 }
 </script>
 
 <template>
   <div class="product__sort">
-    <button class="product__sort-trigger">
+    <button class="product__sort-trigger" @click="toggleTrigger">
       <span class="product__sort-selected hl7">{{ sortMethod }}</span>
       <span class="product__sort-arrow">
         <icon-wrapper
@@ -27,7 +34,10 @@ function handleSelect(option) {
         />
       </span>
     </button>
-    <ul class="product__sort-option-list">
+    <ul
+      class="product__sort-option-list"
+      :class="{ 'product__sort-option-list--active': trigger }"
+    >
       <li
         v-for="option in options"
         :key="option"
@@ -72,7 +82,7 @@ function handleSelect(option) {
     background-color: var(--white);
   }
 
-  &:hover &-option-list {
+  &-option-list--active {
     display: block;
   }
 
