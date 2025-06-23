@@ -42,15 +42,17 @@ defineProps({
   }
 
   &__picture {
-    background-color: var(--white-smoke);
+    background-image: linear-gradient(var(--white), var(--alice-blue));
     width: 100%;
   }
 
   &__image {
-    width: 100%;
     vertical-align: middle;
     transform: scale(1);
     transition: transform 0.3s;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center;
   }
 
   &__item:hover &__image {
