@@ -40,9 +40,12 @@ import IconWrapper from './IconWrapper.vue'
         >
         <ul class="main-footer__follow-list">
           <li class="main-footer__follow-item">
-            <router-link to="/" class="main-footer__follow-link">
+            <a
+              href="https://github.com/littlePlumule/carrywell-vue"
+              class="main-footer__follow-link"
+            >
               <icon-wrapper icon-name="github" class="main-footer__icon hl5" />
-            </router-link>
+            </a>
           </li>
           <li class="main-footer__follow-item">
             <router-link to="/" class="main-footer__follow-link">
