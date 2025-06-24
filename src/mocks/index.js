@@ -774,7 +774,7 @@ const products = [
   {
     id: '17',
     category: 'coin-purse',
-    title: 'CarryWell 迷你零錢包',
+    title: '迷你零錢包',
     price: 400,
     image: miniCoinPurseImage_red,
     color: '紅色',
@@ -799,7 +799,7 @@ const products = [
   {
     id: '18',
     category: 'coin-purse',
-    title: 'CarryWell 迷你零錢包',
+    title: '迷你零錢包',
     price: 400,
     image: miniCoinPurseImage_blue,
     color: '藍色',
@@ -824,7 +824,7 @@ const products = [
   {
     id: '19',
     category: 'coin-purse',
-    title: 'CarryWell 迷你零錢包',
+    title: '迷你零錢包',
     price: 400,
     image: miniCoinPurseImage_yellow,
     color: '黃色',
