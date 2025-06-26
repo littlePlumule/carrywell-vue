@@ -43,6 +43,7 @@ import IconWrapper from './IconWrapper.vue'
             <a
               href="https://github.com/littlePlumule/carrywell-vue"
               class="main-footer__follow-link"
+              target="_blank"
             >
               <icon-wrapper icon-name="github" class="main-footer__icon hl5" />
             </a>
