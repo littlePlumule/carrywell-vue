@@ -1,4 +1,4 @@
-import { createWebHashHistory, createRouter } from 'vue-router'
+import { createWebHistory, createRouter } from 'vue-router'
 import { isValidCategory, findProductById } from '../utils/pathValidator'
 
 import PageHome from '../pages/PageHome.vue'
@@ -76,7 +76,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   scrollBehavior() {
     return {
       top: 0,
