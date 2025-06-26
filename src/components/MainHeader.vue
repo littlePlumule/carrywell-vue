@@ -30,6 +30,10 @@ function toggleMenu() {
   isMenuActive.value = !isMenuActive.value
 }
 
+function closeMenu() {
+  isMenuActive.value = false
+}
+
 const { totalItem } = useCart()
 </script>
 
@@ -63,6 +67,7 @@ const { totalItem } = useCart()
             :class="{
               'main-header__nav-item--active': isActive(item.path),
             }"
+            @click="closeMenu"
           >
             <router-link class="main-header__nav-link hl5" :to="item.path">
               {{ item.label }}
