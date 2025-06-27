@@ -8,6 +8,7 @@
 <body>
   <p>Redirecting...</p>
   <script>
+    const redirectUrl = location.pathname + location.search + location.hash
     sessionStorage.setItem('redirect', location.href)
     window.location.replace('/carrywell-vue/')
   </script>
