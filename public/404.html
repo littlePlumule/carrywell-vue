@@ -8,9 +8,9 @@
 <body>
   <p>Redirecting...</p>
   <script>
-    const redirectUrl = location.pathname + location.search + location.hash
-    sessionStorage.setItem('redirect', location.href)
-    window.location.replace('/carrywell-vue/')
+    const redirectUrl = location.pathname + location.search + location.hash;
+    sessionStorage.setItem('redirect', redirectUrl);
+    window.location.replace('/carrywell-vue/');
   </script>
 </body>
 </html>

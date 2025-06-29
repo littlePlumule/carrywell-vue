@@ -5,12 +5,28 @@ import App from './App.vue'
 
 const app = createApp(App)
 
+app.use(router)
+
 const REDIRECT_KEY = 'redirect'
 const redirectPath = sessionStorage.getItem(REDIRECT_KEY)
-if (redirectPath) {
-  sessionStorage.removeItem(REDIRECT_KEY)
-  const relativePath = redirectPath.replace(location.origin, '')
-  router.replace(relativePath)
-}
 
-app.use(router).mount('#app')
+router.isReady().then(async () => {
+  if (redirectPath) {
+    sessionStorage.removeItem(REDIRECT_KEY)
+
+    const base = import.meta.env.BASE_URL || '/'
+    const relativePath = redirectPath.startsWith(base)
+      ? redirectPath.slice(base.length - 1)
+      : redirectPath
+
+    const matchedRoutes = router.resolve(relativePath).matched
+
+    if (matchedRoutes.length > 0) {
+      await router.replace(relativePath)
+    } else {
+      await router.replace({ name: 'NotFound' })
+    }
+  }
+
+  app.mount('#app')
+})
