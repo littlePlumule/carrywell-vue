@@ -4,9 +4,7 @@
 @use './base/common';
 @use './base/typography';
 
-@use './layout/container';
-
-@use './components/banner.scss';
+@use './components/banner';
 @use './components/button';
 @use './components/sidebar';
 @use './components/card';
@@ -14,5 +12,6 @@
 @use './components/form';
 @use './components/step.scss';
 
+@use './layout/container';
 @use './layout/header';
 @use './layout/footer';
